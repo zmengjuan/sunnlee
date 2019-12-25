@@ -42,7 +42,7 @@ module.exports = {
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /.sass$/,
+        test: /\.sass$/,
         loaders: ['style', 'css', 'sass']
       },
       {

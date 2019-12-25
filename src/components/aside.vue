@@ -25,7 +25,7 @@ export default {
   },
 }
 </script>
-<style lang="stylus" scoped>
+<style  scoped lang="scss">
 .home {
   width: 100%;
   height:100%;
@@ -46,7 +46,7 @@ export default {
     width: 100%;
     height:50%;
     &1{
-        background :rgb(167 , 5,86)
+        background :rgb(167 , 5, 86)
     }
     &2{
         background :rgb(2 ,127,136)

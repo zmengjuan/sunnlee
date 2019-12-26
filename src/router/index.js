@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 // import aside from '@/components/aside'
 
 Vue.use(Router)
@@ -9,8 +8,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      redirect: '/demolist'
+    },
+    {
+      path: '/demolist',
+      name: 'demolist',
+      component: () => import('@/views/demolist.vue')
+    },
+    {
+      path: '/swiper',
+      name: 'swiper',
+      component: () => import('@/views/swiper.vue')
     },
     // {
     //   path: '/',

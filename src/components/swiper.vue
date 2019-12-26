@@ -7,7 +7,6 @@
     @touchcancel.prevent.stop = "touchcancel"
   >
     <slot></slot>
-    <div>44444</div>
   </div>
 </template>
 <script>
@@ -37,9 +36,13 @@ export default {
   methods: {
     touchmove(e){
       if(!this.isDown) return
-      if(!this.directionFlag === 'Y'){
+      if(this.directionFlag === 'Y'){
         this.direction = 'top'
         this.offsetWH = 'offsetHeight'
+        this.offsetTL = 'offsetTop'
+      } else {
+        this.direction = 'left'
+        this.offsetWH = 'offsetWidth'
         this.offsetTL = 'offsetLeft'
       }
       let end = e.touches[0][`client${this.directionFlag}`]
@@ -59,13 +62,12 @@ export default {
       this.scrollView.classList.remove('animate')
       this.isDown = true
       this.start = e.touches[0][`client${this.directionFlag}`]
-      this.start = e.touches[0][`client${this.directionFlag}`]
     },
      touchend (e){
       this.isDown = false
       this.scrollView.classList.add('animate')
-      this.left = Math.abs[this.scrollView[this.offsetTL]]
-      this.index = Math[this.distance> 0 ? 'floor' : 'ceil'](left/this.scrollView.children[0][this.offsetWH]);
+      let left = Math.abs(this.scrollView[this.offsetTL])
+      let index = Math[this.distance> 0 ? 'floor' : 'ceil'](left/this.scrollView.children[0][this.offsetWH]);
       this.scrollView.style[this.direction] = -index*this.scrollView.children[0][this.offsetWH] + 'px'
     }
   },
@@ -82,5 +84,8 @@ export default {
 .swiper {
   width: 100%;
   height:100%;
+}
+.animate {
+  transition :all .3s;
 }
 </style>

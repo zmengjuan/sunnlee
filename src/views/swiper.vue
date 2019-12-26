@@ -2,13 +2,13 @@
 <div class="home">
     <Swiper :directionFlag ="directionFlag">
     <div class="scroll-view">
-        <div :class="['page' , `page${index+1}`]" v-for="{item,index} in 4" :key="index"></div>
+        <div :class="['page' , `page${item}`]" v-for="item in 4" :key="item"></div>
     </div>
     </Swiper>
 </div>
 </template>
 <script>
-// import Swiper from '@/components/aside'
+import Swiper from '@/components/Swiper'
 export default {
   name: 'swiper',
   components: {
@@ -16,7 +16,7 @@ export default {
   },
   data(){
       return {
-          directionFlag: 'x'
+          directionFlag: 'X'
       }
   },
   methods: {
@@ -34,16 +34,13 @@ export default {
 }
 .scroll-view {
   width: 400%;
-  height:50%;
+  height:100%;
   position:absolute;
   left:0;
   display :flex;
-  &.animate {
-      transition :all .3s;
-  }
   .page {
     width: 100%;
-    height:50%;
+    height:100%;
     &1{
         background :rgb(167 , 5, 86)
     }

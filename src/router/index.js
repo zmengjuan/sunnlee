@@ -1,9 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import demoRouters from '@/modules/demo/demoRouter'
+import homeRouters from '@/modules/home/router'
 Vue.use(Router)
 
 const routers = [
+  {
+    path: '/',
+    redirect: '/demolist'
+  },
   {
     path: '/demolist',
     name: 'demolist',
@@ -12,7 +17,8 @@ const routers = [
       title: 'demolist'
     },
   },
-  ...demoRouters
+  ...demoRouters,
+  ...homeRouters
 ]
 
 const router = new Router({

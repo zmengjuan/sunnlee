@@ -13,7 +13,7 @@
 </template>
 
 <script>
-const QRCode = require('easyqrcodejs');
+import qrcode from'@/utils/qrcode'
 export default {
   data () {
     return {
@@ -22,32 +22,9 @@ export default {
   },
   methods: {
     generate () {
-     if(this.$refs.qrcode.children.length){
-       Array.from(this.$refs.qrcode.children).forEach(item =>{
-         item.remove()
-       })
-     }
-      this.qrcode(this.$refs.qrcode,this.value)
+      qrcode(this.$refs.qrcode,this.value)
     },
-    qrcode (el,value,width=375,height=375) {
-      let qrcode = new QRCode(el,{
-        text: this.value,
-        width: 375,
-        height: 375,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H, // L, M, Q, H
-        dotScale: 1,// Must be greater than 0, less than or equal to 1. default is 1
-        quietZone: 0,
-        quietZoneColor: 'transparent',
-        // logo:"../demo/logo.png", // Relative address, relative to `easy.qrcode.min.js`
-        // logo:"http://127.0.0.1:8020/easy-qrcodejs/demo/logo.png", 
-        // logoWidth:80, // widht. default is automatic width
-        // logoHeight:80,// height. default is automatic height
-        // logoBackgroundColor:'#fffff', // Logo backgroud color, Invalid when `logBgTransparent` is true; default is '#ffffff'
-        // logoBackgroundTransparent:false, // Whether use transparent image, default is false
-      })
-    }
+    
   }
 }
 </script>
@@ -56,7 +33,11 @@ export default {
   .app{
     height: 100%;
     .qrcode{
+      width: 100%;
       height: 375px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background: #fff;
     }
   }

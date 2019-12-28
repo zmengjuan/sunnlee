@@ -3,6 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import './utils/registerCom'
+import vantCom from './utils/registerVantCom'
+vantCom.forEach( item => {
+  Vue.use(item)
+})
 
 Vue.config.productionTip = false
 

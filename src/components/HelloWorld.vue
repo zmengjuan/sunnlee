@@ -67,7 +67,7 @@ export default {
       this.left = Math.abs[this.scrollView[this.offsetTL]]
       this.index = Math[this.distance> 0 ? 'floor' : 'ceil'](left/this.scrollView.children[0][this.offsetWH]);
       this.scrollView.style[this.direction] = -index*this.scrollView.children[0][this.offsetWH] + 'px'
-    }
+    },
   },
 }
 </script>

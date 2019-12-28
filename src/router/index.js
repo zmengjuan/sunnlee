@@ -5,17 +5,20 @@ import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
+export default[
+  //view的
     // {
     //   path: '/',
-    //   name: 'aside',
-    //   component: aside
-    // }
+    //   name: 'HelloWorld',
+    //   meta: {
+
+    //  },
+    //  component: () => import('@/components/HelloWorld')
+    // },
+    {
+      path: '/',
+      name: 'aside',
+      component: aside
+    },
   ]
-})
+

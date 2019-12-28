@@ -9,7 +9,7 @@
 </template>
 <script>
 import fetch from '../utils/fetch'
-import Swiper from '@/components/aside'
+import Swiper from '@/components/HelloWorld.vue'
 export default {
   name: 'swiper',
   components: {
@@ -25,7 +25,7 @@ export default {
   },
 }
 </script>
-<style  scoped lang="scss">
+<style  lang="scss" scoped>
 .home {
   width: 100%;
   height:100%;

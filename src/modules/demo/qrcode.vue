@@ -1,6 +1,9 @@
 <template>
   <div class="app">
-    <my-header :title="$route.meta.title"></my-header>
+    <my-header 
+    :title="$route.meta.title"
+    @leftClick="back">
+    </my-header>
     <my-sub/>
     <div class="qrcode" ref="qrcode"></div>
     <my-sub/>
@@ -24,7 +27,9 @@ export default {
     generate () {
       qrcode(this.$refs.qrcode,this.value)
     },
-    
+    back () {
+      this.$router.push('/demolist')
+    }
   }
 }
 </script>

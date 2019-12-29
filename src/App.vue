@@ -3,12 +3,17 @@
     <transition :name="transitionName">
       <router-view/>
     </transition>
+  <Menu v-if="$route.meta.menu"></Menu>
   </div>
 </template>
 
 <script>
+import Menu from '@/components/menu'
 export default {
   name: 'App',
+  components: {
+    Menu
+  },
   data () {
     return {
       transitionName: ''

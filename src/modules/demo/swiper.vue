@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <my-header :title="$route.meta.title"></my-header>
+    <my-header 
+    :title="$route.meta.title"
+    @leftClick="back"
+    ></my-header>
     <div class="cont">
       <Swiper :directionFlag="directionFlag">
         <div class="scroll-view">
@@ -22,7 +25,11 @@ export default {
       directionFlag: "Y"
     };
   },
-  methods: {}
+  methods: {
+    back () {
+      this.$router.push('/demolist')
+    }
+  }
 };
 </script>
 <style  scoped lang="scss">

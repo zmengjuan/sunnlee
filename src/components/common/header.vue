@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div class="left" @click="$router.go(-1)">
+    <div class="left" @click="leftClick">
       <slot name="left">
         <van-icon name="arrow-left" size="24" />
       </slot>
@@ -8,7 +8,7 @@
     <div class="center">
       <slot name="center">{{title}}</slot>
     </div>
-    <div class="right">
+    <div class="right" @click="rightClick">
       <slot name="right"></slot>
     </div>
   </div>
@@ -20,6 +20,14 @@ export default {
       type: String,
       default: 'title'
     }
+  },
+  methods: {
+    leftClick () {
+      this.$emit('leftClick')
+    },
+    rightClick () {
+      this.$emit('rightClick')
+    }
   }
 }
 </script>
@@ -28,6 +36,7 @@ export default {
   height: 50px;
   background: #fff;
   display: flex;
+  font-size: 16px;
   .left,
   .right {
     width: 50px;

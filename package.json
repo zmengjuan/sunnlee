@@ -10,9 +10,12 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "easyqrcodejs": "^3.3.0",
+    "html2canvas": "^1.0.0-rc.5",
     "iview": "^1.0.1",
     "vant": "^2.3.3",
+    "vconsole": "^3.3.4",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

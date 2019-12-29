@@ -1,8 +1,9 @@
 import {
   Icon,
   Field,
-  Button
+  Button,
+  Uploader
 } from 'vant'
 
-export default [Icon, Field, Button]
+export default [Icon, Field, Button, Uploader]
 

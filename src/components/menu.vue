@@ -55,7 +55,7 @@ export default {
       border-radius: 50%;
       bottom: 50px;
       right: 20px;
-      background: rgb(59, 134, 221);
+      background-color: rgb(59, 134, 221);
       box-shadow:0 0 12px rgba(100, 100, 100, .7);
       button{
         width: 100%;

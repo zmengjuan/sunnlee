@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@antv/f2": "^3.5.0-beta.3",
     "axios": "^0.19.0",
     "easyqrcodejs": "^3.3.0",
     "html2canvas": "^1.0.0-rc.5",

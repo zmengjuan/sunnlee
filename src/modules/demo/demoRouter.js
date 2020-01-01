@@ -23,6 +23,14 @@ const routers = [
     meta: {
       title: '上传图片'
     }
+  },
+  {
+    path: '/demolist/F2',
+    name: 'F2',
+    component: () => import('./F2.vue'),
+    meta: {
+      title: 'F2图表'
+    }
   }
 ]
 
